@@ -40,7 +40,7 @@
 #ifndef _OS_INCLUDED
 #define _OS_INCLUDED
 
-#include "../c-client/osdep.h"
+#include <imap/osdep.h>
 
 
 /*----------------------------------------------------------------------

@@ -40,7 +40,7 @@ static char rcsid[] = "$Id: pine.c 14081 2005-09-12 22:04:25Z hubert@u.washingto
   ----------------------------------------------------------------------*/
 
 #include "headers.h"
-#include "../c-client/imap4r1.h"
+#include <imap/imap4r1.h>
 
 
 /*
@@ -458,7 +458,7 @@ main(argc, argv)
 #endif
 
     /*------- Set up c-client drivers -------*/ 
-#include "../c-client/linkage.c"
+#include <imap/linkage.c>
 
     /*------- ... then tune the drivers just installed -------*/ 
 #ifdef	DOS

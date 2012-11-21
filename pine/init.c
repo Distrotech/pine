@@ -65,7 +65,7 @@ static char rcsid[] = "$Id: init.c 14080 2005-09-12 18:53:17Z hubert@u.washingto
 
 
 #include "headers.h"
-#include "../c-client/imap4r1.h"  /* for LEVELSTATUS() */
+#include <imap/imap4r1.h>  /* for LEVELSTATUS() */
 
 
 typedef enum {Sapling, Seedling, Seasoned} FeatureLevel;

@@ -81,7 +81,7 @@ static char rcsid[] = "$Id: strings.c 14075 2005-08-30 00:08:19Z hubert@u.washin
  ====*/
 
 #include "headers.h"
-#include "../c-client/utf8.h"
+#include <imap/utf8.h>
 
 typedef struct role_args {
     char    *ourcharset;

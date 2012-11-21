@@ -50,7 +50,7 @@ static char rcsid[] = "$Id: mailindx.c 14053 2005-05-03 22:00:53Z hubert $";
  ====*/
  
 #include "headers.h"
-#include "../c-client/imap4r1.h"
+#include <imap/imap4r1.h>
 
 /*
  * Some common Command Bindings

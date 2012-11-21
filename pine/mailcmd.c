@@ -51,8 +51,8 @@ static char rcsid[] = "$Id: mailcmd.c 14081 2005-09-12 22:04:25Z hubert@u.washin
   ====*/
 
 #include "headers.h"
-#include "../c-client/imap4r1.h"
-#include "../c-client/utf8.h"
+#include <imap/imap4r1.h>
+#include <imap/utf8.h>
 
 
 /*

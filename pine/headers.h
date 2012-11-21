@@ -59,7 +59,7 @@ is os-xxx.h. (Don't edit osdep.h; edit os-xxx.h instead.)
 #include "../pico/headers.h"
 
 
-#include "../c-client/mail.h"
+#include <imap/mail.h>
 
 #include "os.h"
 
@@ -79,8 +79,8 @@ is os-xxx.h. (Don't edit osdep.h; edit os-xxx.h instead.)
 #endif
 #endif
 
-#include "../c-client/rfc822.h"
-#include "../c-client/misc.h"
+#include <imap/rfc822.h>
+#include <imap/misc.h>
 
 #ifdef  ENABLE_LDAP
 

@@ -47,9 +47,9 @@ static char rcsid[] = "$Id: send.c 14081 2005-09-12 22:04:25Z hubert@u.washingto
  ====*/
 
 #include "headers.h"
-#include "../c-client/smtp.h"
-#include "../c-client/nntp.h"
-#include "../c-client/imap4r1.h"
+#include <imap/smtp.h>
+#include <imap/nntp.h>
+#include <imap/imap4r1.h>
 
 
 #ifndef TCPSTREAM
