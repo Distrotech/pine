@@ -37,8 +37,8 @@
 
 
 all:	
-	@ echo 'Use the "build" command (shell script) to make Pine.'
-	@ echo 'You can say "build help" for details on how it works.'
+	cd pico; make all
+	cd pine; make pine
 
 clean:
 	./build clean

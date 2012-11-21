@@ -3,6 +3,8 @@
 
 RM=  rm -f
 
+HOSTCC = $(CC)
+
 ALL=	os-a32.c os-a41.c os-aix.c \
 	os-aux.c os-bs2.c os-bsd.c os-bsf.c os-bsi.c os-bso.c \
 	os-cvx.c os-dos.c os-dpx.c os-dyn.c \
@@ -21,7 +23,7 @@ ALL=	os-a32.c os-a41.c os-aix.c \
 all:		includer $(ALL)
 
 includer:	includer.c
-		$(CC) -o includer includer.c
+		$(HOSTCC) -o includer includer.c
 
 clean:
 		$(RM) $(ALL) includer

@@ -40,7 +40,7 @@ OPTIMIZE=    # -O
 PROFILE=     # -pg
 DEBUG=       -g -DDEBUG
 
-STDCFLAGS=	-Dlnx -DJOB_CONTROL -DPOSIX -DMOUSE
+STDCFLAGS=	-Dlnx -DJOB_CONTROL -DPOSIX -DMOUSE -fPIC
 CFLAGS=         $(OPTIMIZE) $(PROFILE) $(DEBUG) $(EXTRACFLAGS) $(STDCFLAGS)
 
 # switches for library building
@@ -48,7 +48,7 @@ LIBCMD=		ar
 LIBARGS=	ru
 RANLIB=		ranlib
 
-LIBS=		$(EXTRALDFLAGS) -lncurses
+LIBS=		$(EXTRALDFLAGS) -lncurses -ltinfo
 
 OFILES=		attach.o basic.o bind.o browse.o buffer.o \
 		composer.o display.o file.o fileio.o line.o pico_os.o \
@@ -61,17 +61,16 @@ HFILES=		headers.h estruct.h edef.h efunc.h pico.h os.h
 # dependencies for the Unix versions of pico and libpico.a
 #
 all:		pico pilot
-pico pilot:	libpico.a
+pico pilot:	libpico.so
 
 pico:		main.o
-		$(CC) $(CFLAGS) main.o libpico.a $(LIBS) -o pico
+		$(CC) $(CFLAGS) main.o -L. -lpico $(LIBS) -o pico
 
 pilot:		pilot.o
-		$(CC) $(CFLAGS) pilot.o libpico.a $(LIBS) -o pilot
+		$(CC) $(CFLAGS) pilot.o -L. -lpico $(LIBS) -o pilot
 
-libpico.a:	$(OFILES)
-		$(LIBCMD) $(LIBARGS) libpico.a $(OFILES)
-		$(RANLIB) libpico.a
+libpico.so:	$(OFILES)
+		$(CC) -shared -o libpico.so $(OFILES)
 
 clean:
 		rm -f *.a *.o *~ pico_os.c os.h pico pilot
