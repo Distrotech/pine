@@ -37,8 +37,19 @@
 
 
 all:	
-	cd pico; make all
-	cd pine; make pine
+	make -C pico
+	make -C pine pine
 
 clean:
 	./build clean
+	rm pico/libpico.so
+
+distclean: clean
+
+install: all
+	ginstall -D pico/libpico.so $(DESTDIR)/usr/lib/libpico.so.1
+	ln -s libpico.so.1 $(DESTDIR)/usr/lib/libpico.so || true
+	ginstall -D pico/pico $(DESTDIR)/usr/bin/pico
+	ginstall -D pico/pilot $(DESTDIR)/usr/bin/pilot
+	ginstall -D pine/pine $(DESTDIR)/usr/bin/pine
+

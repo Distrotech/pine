@@ -2,6 +2,7 @@
 #
 
 RM=  rm -f
+HOSTCC = $(CC)
 
 ALL=	os-a32.c os-a41.c os-aix.c \
 	os-aux.c os-bs2.c os-bsd.c os-bsf.c os-bsi.c os-bso.c \
@@ -20,7 +21,7 @@ ALL=	os-a32.c os-a41.c os-aix.c \
 all:		includer $(ALL)
 
 includer:	includer.c
-		$(CC) -o includer includer.c
+		$(HOSTCC) -o includer includer.c
 
 clean:
 		$(RM) $(ALL) includer
@@ -79,5 +80,3 @@ os-so5.c: bld_path canacces canonicl chnge_pw coredump creatdir debuging.tim dis
 os-sun.c: bld_path canacces canonicl chnge_pw coredump.fpe creatdir debuging.tim diskquot.sun domnames err_desc execview expnfldr fgetpos.non filesize fltrname fnexpand header hostname jobcntrl lstcmpnt mimedisp pipe postreap.wtp print pw_stuff readfile rename sendmail tempfile termin.gen termin.unx termout.gen termout.unx writ_dir os-sun.ic
 os-sv4.c: bld_path canacces canonicl chnge_pw coredump creatdir debuging.tim diskquot.sv4 domnames err_desc execview expnfldr fgetpos filesize fltrname fnexpand header hostname.una jobcntrl lstcmpnt mimedisp pipe postreap.wtp print pw_stuff readfile rename sendmail srandom.dum tempfile termin.gen termin.unx termout.gen termout.unx writ_dir os-sv4.ic
 os-ult.c: bld_path canacces canonicl chnge_pw coredump.fpe creatdir debuging.tim diskquot domnames err_desc execview expnfldr fgetpos filesize fltrname fnexpand header hostname jobcntrl lstcmpnt mimedisp pipe postreap.wtp print pw_stuff readfile rename sendmail tempfile termin.gen termin.unx termout.gen termout.unx writ_dir os-ult.ic
-os-win.c: bld_path.dos canacces canonicl.dos chnge_pw.dos codepage.win coredump creatdir.dos debuging.dos dialog.win diskquot.non domnames.dos dosextra err_desc execview.win expnfldr.dos fgetpos filesize fltrname.dos fnexpand.dos header hostname jobcntrl.non lstcmpnt.dos mimedisp pipe.win print.win pw_stuff.dos readfile.dos rename.dos scroll.win sendmail.dos tempfile tempnam.dos termin.dos termin.gen termout.gen termout.win winextra writ_dir os-win.ic
-os-wnt.c: bld_path.dos canacces.dos canonicl chnge_pw.dos codepage.wnt coredump creatdir.dos debuging.dos dialog.win diskquot.non domnames.dos err_desc execview.wnt expnfldr.dos fgetpos filesize fltrname.dos fnexpand.dos header hostname jobcntrl.dos lstcmpnt.dos mimedisp.wnt pipe.wnt print.win pw_stuff.dos readfile.dos rename.dos scroll.win sendmail.dos tempfile termin.dos termin.gen termout.gen termout.win winextra writ_dir os-wnt.ic

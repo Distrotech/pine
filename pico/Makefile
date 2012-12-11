@@ -36,9 +36,9 @@
 RM=          rm -f
 LN=          ln -s
 MAKE=        make
-OPTIMIZE=    # -O
+OPTIMIZE=    -Os
 PROFILE=     # -pg
-DEBUG=       -g -DDEBUG
+DEBUG=       -DDEBUG
 
 STDCFLAGS=	-Dlnx -DJOB_CONTROL -DPOSIX -DMOUSE -fPIC
 CFLAGS=         $(OPTIMIZE) $(PROFILE) $(DEBUG) $(EXTRACFLAGS) $(STDCFLAGS)
@@ -48,7 +48,7 @@ LIBCMD=		ar
 LIBARGS=	ru
 RANLIB=		ranlib
 
-LIBS=		$(EXTRALDFLAGS) -lncurses -ltinfo
+LIBS=		$(EXTRALDFLAGS) -lncurses
 
 OFILES=		attach.o basic.o bind.o browse.o buffer.o \
 		composer.o display.o file.o fileio.o line.o pico_os.o \
