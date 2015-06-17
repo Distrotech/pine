@@ -60,7 +60,7 @@ PICODIR=     ../pico
 LDAPOFILES=   addrbook.o adrbkcmd.o args.o bldaddr.o init.o \
 	      mailview.o other.o pine.o strings.o takeaddr.o
 
-STDLIBS=     -lncurses -lc-client -L../pico -lpico -lssl -lcrypto -lcrypt -ldl
+STDLIBS=     -ltinfo -lc-client -L../pico -lpico -lssl -lcrypto -lcrypt -ldl
 LIBS=        $(LDAPLIBS) $(STDLIBS)
 
 STDCFLAGS=   -DLNX -DSYSTYPE=\"LNX\" -DMOUSE
