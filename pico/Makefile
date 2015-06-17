@@ -48,7 +48,7 @@ LIBCMD=		ar
 LIBARGS=	ru
 RANLIB=		ranlib
 
-LIBS=		$(EXTRALDFLAGS) -lncurses
+LIBS=		$(EXTRALDFLAGS) -ltinfo
 
 OFILES=		attach.o basic.o bind.o browse.o buffer.o \
 		composer.o display.o file.o fileio.o line.o pico_os.o \
